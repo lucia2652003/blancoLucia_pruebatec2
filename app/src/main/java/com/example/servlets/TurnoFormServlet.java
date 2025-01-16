@@ -1,6 +1,8 @@
 package com.example.servlets;
 
+import com.example.controllers.CiudadanoController;
 import com.example.controllers.TurnoController;
+import com.example.entities.Ciudadano;
 import com.example.entities.Turno;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -9,24 +11,34 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 
-@WebServlet("/listadoTurno")
+@WebServlet("/crearTurno")
 public class TurnoFormServlet extends HttpServlet {
 
-    TurnoController tc = new TurnoController();
+    CiudadanoController ciudadanoController = new CiudadanoController();
+    TurnoController turnoController = new TurnoController();
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
-        List<Turno> listado = tc.findAll();
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<Ciudadano> listadoClientes = ciudadanoController.findAll();
 
-        listado.forEach(turno -> {
-            System.out.println("Fecha "+turno.getFecha());
-            System.out.println("Descripcion "+turno.getDescripcion());
-            System.out.println("Ciudadano "+turno.getCiudadano().getNombre());
-        });
+        request.setAttribute("clientes", listadoClientes);
 
-        request.setAttribute("listado", listado);
+        request.getRequestDispatcher("formTurno.jsp").forward(request,response);
+    }
 
-        request.getRequestDispatcher("turno.jsp").forward(request, resp);
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //Coger los parámetros de Turno
+        String fecha = req.getParameter("fecha");
+        String descripcion = req.getParameter("descripcion");
+        String estado = req.getParameter("tipoEstado");
+        Long ciu = Long.valueOf(req.getParameter("cliente"));
+        Ciudadano ciudadano = new Ciudadano(ciu, null, null, null);
+
+        turnoController.create(fecha,descripcion,estado,ciudadano);
+
+        resp.sendRedirect(req.getContextPath()+"/listadoTurno");
     }
 }

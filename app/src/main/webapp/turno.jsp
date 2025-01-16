@@ -8,8 +8,18 @@
     <title>Listado de Turnos</title>
 </head>
 <body>
-  <h1>Listado de personas</h1>
-  
+    <%@ include file="partials/header.jsp" %>
+  <h2>Lista de personas y turnos asignador</h2>
+  <form action="/app/listadoTurno" method="post">
+    <label for="fecha">Desde: <input type="date" id="fecha" name="fecha" /></label>
+    <label for="tipoEstado">
+        <select id="tipoEstado" name="tipoEstado">
+            <option value="ESPERA">En espera</option>
+            <option value="ATENDIDO">Atendido</option>
+        </select>
+    </label>
+    <input type="submit" value="Filtrar"> 
+  </form>
   <table>
     <thead>
         <th>Nombre Ciudadano</th>
@@ -18,6 +28,8 @@
         <th>Estado Turno</th>
     </thead>
     <tbody>
+        
+         
         <% List<Turno> listado = (List<Turno>) request.getAttribute("listado");
             for(Turno turno: listado) { %>
                 <tr>

@@ -45,7 +45,6 @@ public class Turno {
     }
 
     //Getters y setters
-
     public Long getId() {
         return id;
     }
@@ -88,7 +87,6 @@ public class Turno {
 
 
     //toString()
-
     @Override
     public String toString() {
         return "Turno{" +
