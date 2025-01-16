@@ -1,8 +1,6 @@
 package com.example.servlets;
 
-import com.example.controllers.CiudadanoController;
 import com.example.controllers.TurnoController;
-import com.example.entities.Ciudadano;
 import com.example.entities.Turno;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

@@ -3,7 +3,6 @@ package com.example.entities;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
-import java.util.Set;
 
 @Entity
 public class Turno {

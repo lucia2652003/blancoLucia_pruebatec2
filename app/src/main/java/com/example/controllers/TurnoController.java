@@ -7,8 +7,6 @@ import com.example.persistence.GenericoJPA;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 public class TurnoController {
     GenericoJPA<Turno> genericoJPA;
@@ -23,7 +21,7 @@ public class TurnoController {
     }
 
     public void create(String fecha, String descripcion, String estado, Ciudadano ciudadano) {
-        //Elegir el estado, nos pide una enumeración
+        //Elegir el estado, nos pide una enumeración en el objeto Turno
         Turno.TipoEstado nombreEstado = estado.equalsIgnoreCase("ESPERA") ?  Turno.TipoEstado.ESPERA:  Turno.TipoEstado.ATENDIDO;
 
         //Hacer una excepción para evitar los required
@@ -33,11 +31,12 @@ public class TurnoController {
             genericoJPA.createGenerico(t);
         } catch (InvalidTurno e) {
             System.out.println(e.getMessage());
-        } finally {
+        } finally {// Finaliza el try
             System.out.println("Operación finalizada");
         }
     }
 
+    //Validación de datos para evitar la inserción
     private void validacionTurno(String fecha, String descripcion) throws InvalidTurno {
 
         if(fecha.isEmpty() || descripcion.isEmpty()){

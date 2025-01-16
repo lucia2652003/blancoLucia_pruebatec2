@@ -1,7 +1,6 @@
 package com.example.controllers;
 
 import com.example.entities.Ciudadano;
-import com.example.entities.Turno;
 import com.example.persistence.GenericoJPA;
 
 import java.util.List;
