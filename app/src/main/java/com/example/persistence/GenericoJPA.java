@@ -17,7 +17,6 @@ public class GenericoJPA<T> {
         this.entidadGenerica = entidadGenerica;
     }
 
-    // TODO: 07/01/2025 Método generico create
     public void createGenerico(T nueva) {
         EntityManager em = ConfigJPA.getEntityManagerFactory();
 

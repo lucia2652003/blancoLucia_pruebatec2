@@ -20,9 +20,9 @@ public class Turno {
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    private Turno TipoTurno;
+    private TipoEstado estado;
 
-    public enum TipoTurno{
+    public enum TipoEstado{
         ESPERA,
         ATENDIDO
     }
@@ -36,15 +36,16 @@ public class Turno {
     public Turno() {
     }
 
-    public Turno(Long id, LocalDate fecha, String descripcion, Turno tipoTurno, Ciudadano ciudadano) {
+    public Turno(Long id, LocalDate fecha, String descripcion, TipoEstado estado, Ciudadano ciudadano) {
         this.id = id;
         this.fecha = fecha;
         this.descripcion = descripcion;
-        TipoTurno = tipoTurno;
+        this.estado = estado;
         this.ciudadano = ciudadano;
     }
 
     //Getters y setters
+
     public Long getId() {
         return id;
     }
@@ -69,12 +70,12 @@ public class Turno {
         this.descripcion = descripcion;
     }
 
-    public Turno getTipoTurno() {
-        return TipoTurno;
+    public TipoEstado getEstado() {
+        return estado;
     }
 
-    public void setTipoTurno(Turno tipoTurno) {
-        TipoTurno = tipoTurno;
+    public void setEstado(TipoEstado estado) {
+        this.estado = estado;
     }
 
     public Ciudadano getCiudadano() {
@@ -85,6 +86,7 @@ public class Turno {
         this.ciudadano = ciudadano;
     }
 
+
     //toString()
 
     @Override
@@ -93,7 +95,7 @@ public class Turno {
                 "id=" + id +
                 ", fecha=" + fecha +
                 ", descripcion='" + descripcion + '\'' +
-                ", TipoTurno=" + TipoTurno +
+                ", estado=" + estado +
                 ", ciudadano=" + ciudadano +
                 '}';
     }
