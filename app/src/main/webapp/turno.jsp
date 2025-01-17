@@ -27,9 +27,8 @@
         <th>Fecha Turno</th>
         <th>Estado Turno</th>
     </thead>
+    
     <tbody>
-        
-         
         <% List<Turno> listado = (List<Turno>) request.getAttribute("listado");
             for(Turno turno: listado) { %>
                 <tr>
