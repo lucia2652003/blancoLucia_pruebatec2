@@ -26,22 +26,13 @@ public class TurnoServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //Obtener los parámetros
         String estado = request.getParameter("tipoEstado");
         String fecha = request.getParameter("fecha");
 
-        System.out.println(estado);
-        System.out.println(fecha);
-
         List<Turno> listado = tc.filtroTurno(estado, fecha);
 
-        listado.forEach(turno -> {
-            System.out.println("Ciudadano "+turno.getCiudadano().getNombre());
-            System.out.println("Nombre Turno "+turno.getDescripcion());
-            System.out.println("Fecha "+turno.getFecha());
-            System.out.println("Estado "+turno.getEstado());
-        });
-
-        request.setAttribute("listado", listado);
+        request.setAttribute("listado", listado);//Debe coincidir e
         request.getRequestDispatcher("turno.jsp").forward(request, response);
     }
 

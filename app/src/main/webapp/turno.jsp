@@ -22,7 +22,7 @@
   </form>
   <table>
     <thead>
-        <th>Nombre Ciudadano</th>
+        <th>Ciudadano</th>
         <th>Nombre Turno</th>
         <th>Fecha Turno</th>
         <th>Estado Turno</th>

@@ -37,6 +37,7 @@ public class TurnoFormServlet extends HttpServlet {
 
         turnoController.create(fecha,descripcion,estado,ciudadano);
 
+        //Redirigir a la vista de listadoTurno para mostrarlo, se encuentra al final
         resp.sendRedirect(req.getContextPath()+"/listadoTurno");
     }
 }
