@@ -28,8 +28,8 @@ public class TurnoController {
         //Hacer una excepción para evitar poner el HTML required (campos obligatorios)
         try {
             validacionTurno(fecha, descripcion);
-            Turno t = new Turno(null, LocalDate.parse(fecha), descripcion, nombreEstado, ciudadano);
-            genericoJPA.createGenerico(t);
+            Turno nuevo = new Turno(null, LocalDate.parse(fecha), descripcion, nombreEstado, ciudadano);
+            genericoJPA.createGenerico(nuevo);
         } catch (InvalidTurno e) {
             System.out.println(e.getMessage());
         } finally {// Finaliza el try
