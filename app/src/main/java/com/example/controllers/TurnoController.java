@@ -50,18 +50,13 @@ public class TurnoController {
         }
     }
 
+    //Buscamos aquellos turnos que se encuentran desde tal fecha y si son turnos de espera o atendidas
     public List<Turno> filtroTurno(String estado, String fecha) {
         List<Turno> todosTurnos = genericoJPA.findAllGenerico();
-        Turno.TipoEstado tipo = elegirEnumeracion(estado);
-        List<Turno> filtracion;
+        Turno.TipoEstado tipo = elegirEnumeracion(estado);//Elegir la enumeración
+        List<Turno> filtracion = null;
 
-        if(fecha.isEmpty()){//Ponemos por defecto la fecha Actual, si el campo está vacío
-            filtracion = todosTurnos.stream()
-                                    .filter(turno ->
-                                            LocalDate.now().isBefore(turno.getFecha())
-                                                                && turno.getEstado().equals(tipo))
-                                    .collect(Collectors.toList());
-        }else{
+        if(!fecha.isEmpty()){
             filtracion = todosTurnos.stream()
                     .filter(turno ->
                             LocalDate.parse(fecha).isBefore(turno.getFecha())

@@ -1,0 +1,67 @@
+table{
+    border: 2px solid black;
+    margin-left: 500px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+th, td{
+    text-align: left;
+    padding: 12px;
+}
+
+header{
+    height: 20vh;
+    background-color: rgb(175, 175, 226);
+    display: flex;
+    justify-content: space-evenly;
+}
+
+header img{
+    width: 138%;
+}
+
+/* Diseño del navegador */
+nav ul{
+    float: right;
+    list-style: none;
+}
+
+nav li {
+    float: left;
+}
+  
+nav li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav li a:hover{
+    background-color: aliceblue;
+}
+
+body, select, input[type='submit'], input[type='text']{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Encabezados */
+h1{
+    text-align: center;
+}
+
+/*Formulario*/
+form{
+    margin-left: 500px;
+}
+
+fieldset{
+    text-align: left;
+}
+
+.presentacion{
+    border-radius: 12px;
+    border: solid 1px black;
+    padding: 0.5pc;
+}
