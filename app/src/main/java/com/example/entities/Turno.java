@@ -31,7 +31,6 @@ public class Turno {
     private Ciudadano ciudadano;
 
     //Constructores
-
     public Turno() {
     }
 

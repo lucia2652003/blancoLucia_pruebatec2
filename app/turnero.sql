@@ -1,3 +1,4 @@
+-- Creación de Base de datos
 CREATE DATABASE turnero_db;
 USE turnero_db;
 

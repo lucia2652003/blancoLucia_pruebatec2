@@ -2,13 +2,13 @@ package com.example.entities;
 
 import jakarta.persistence.*;
 
-import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 public class Ciudadano {
 
     //Atributos
+    /*Clave Principal, cada vez que se inserte un item en la tabla se genera un Id incrementado*/
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -43,7 +43,6 @@ public class Ciudadano {
     }
 
     //Getters y Setters
-
     public Long getId() {
         return id;
     }
