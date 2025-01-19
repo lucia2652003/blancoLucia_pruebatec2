@@ -14,6 +14,8 @@ import java.util.List;
 @WebServlet("/listadoTurno")
 public class TurnoServlet extends HttpServlet {
     TurnoController tc = new TurnoController();
+
+    //Obtener el listado
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
         List<Turno> listado = tc.findAll(); //Listado de turnos
@@ -24,6 +26,7 @@ public class TurnoServlet extends HttpServlet {
         request.getRequestDispatcher("turno.jsp").forward(request, resp);
     }
 
+    //Enviar parámetros y mostrar un resultado
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //Obtener los parámetros

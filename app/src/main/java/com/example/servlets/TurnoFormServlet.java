@@ -12,11 +12,14 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+//Para establecer en URL a donde se va a dirigir
 @WebServlet("/crearTurno")
 public class TurnoFormServlet extends HttpServlet {
 
     CiudadanoController ciudadanoController = new CiudadanoController();
     TurnoController turnoController = new TurnoController();
+
+    //Para obtener informacíon y mostrarla
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Ciudadano> listadoClientes = ciudadanoController.findAll();
@@ -26,6 +29,7 @@ public class TurnoFormServlet extends HttpServlet {
         request.getRequestDispatcher("formTurno.jsp").forward(request,response);
     }
 
+    //Enviar valores de los formularios y mostrarlos por la página web
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //Coger los parámetros de Turno
@@ -37,7 +41,7 @@ public class TurnoFormServlet extends HttpServlet {
 
         turnoController.create(fecha,descripcion,estado,ciudadano);
 
-        //Redirigir a la vista de listadoTurno para mostrarlo, se encuentra al final
+        //Redirigir a la vista de listadoTurno para mostrarlo, se establece al final si esta creado o no
         resp.sendRedirect(req.getContextPath()+"/listadoTurno");
     }
 }

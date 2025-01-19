@@ -1,14 +1,15 @@
-table{
-    border: 2px solid black;
-    margin-left: 500px;
-    margin-top: 20px;
-    text-align: center;
+/*Presentación del body*/
+body, select, input[type='submit'], input[type='text'], button{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-th, td{
-    text-align: left;
-    padding: 12px;
+.presentacion{
+    border-radius: 12px;
+    border: solid 1px black;
+    padding: 0.5pc;
 }
+
+/*Diseñador del cabecera*/
 
 header{
     height: 20vh;
@@ -42,8 +43,17 @@ nav li a:hover{
     background-color: aliceblue;
 }
 
-body, select, input[type='submit'], input[type='text']{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+/*Diseño de la tabla*/
+table{
+    border: 2px solid black;
+    margin-left: 500px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+th, td{
+    text-align: left;
+    padding: 12px;
 }
 
 /* Encabezados */
@@ -52,16 +62,43 @@ h1{
 }
 
 /*Formulario*/
-form{
-    margin-left: 500px;
-}
-
 fieldset{
+    margin-left: 500px;
+    margin-right: 500px;
     text-align: left;
 }
 
-.presentacion{
-    border-radius: 12px;
-    border: solid 1px black;
-    padding: 0.5pc;
+input[type='date'], input[type="text"]{
+    width: 500px;
+    height: 45px;
+    font-size: large;
+}
+
+button{
+    padding: 0.2cm;
+    background-color: rgb(107, 192, 54);
+    color: black;
+}
+
+button:hover{
+    background-color: rgb(160, 203, 134);
+}
+
+.impo{
+    color: red;
+}
+
+select{
+    background-color: whitesmoke;
+    font-size: large;
+}
+
+.disenho_select{
+    height:45px;
+    width:600px;
+}
+
+.filtra_select{
+    height: 35px;
+    width:600px;
 }

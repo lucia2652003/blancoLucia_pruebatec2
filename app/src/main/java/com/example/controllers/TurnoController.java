@@ -25,7 +25,7 @@ public class TurnoController {
         //Elegir el estado, nos pide una enumeración en el objeto Turno
         Turno.TipoEstado nombreEstado = elegirEnumeracion(estado);
 
-        //Hacer una excepción para evitar poner el HTML required (campos obligatorios)
+        //Manejo de los errores
         try {
             validacionTurno(fecha, descripcion);
             Turno nuevo = new Turno(null, LocalDate.parse(fecha), descripcion, nombreEstado, ciudadano);
@@ -46,7 +46,7 @@ public class TurnoController {
 
         //Fecha anterior a la fecha actual
         if(LocalDate.parse(fecha).isBefore(LocalDate.now())){
-            throw new InvalidTurno("No puedes introducir una fecha antes de "+LocalDate.now());
+            throw new InvalidTurno("No puedes introducir una fecha anterior a "+LocalDate.now());
         }
     }
 
@@ -54,7 +54,7 @@ public class TurnoController {
     public List<Turno> filtroTurno(String estado, String fecha) {
         List<Turno> todosTurnos = genericoJPA.findAllGenerico();
         Turno.TipoEstado tipo = elegirEnumeracion(estado);//Elegir la enumeración
-        List<Turno> filtracion = null;
+        List<Turno> filtracion;
 
         if(!fecha.isEmpty()){
             filtracion = todosTurnos.stream()
@@ -62,6 +62,9 @@ public class TurnoController {
                             LocalDate.parse(fecha).isBefore(turno.getFecha())
                                     && turno.getEstado().equals(tipo))
                     .collect(Collectors.toList());
+        }else{//Volver al listado anterior (muestre todos los turnos)
+            filtracion = todosTurnos;
+            System.out.println("No hay turnos de esa fecha ni del estado que presenta");
         }
 
         return filtracion;
