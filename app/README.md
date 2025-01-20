@@ -9,18 +9,31 @@ En la práctica vamos a realizar la
         cd Desktop
         git clone https://github.com/lucia2652003/blancoLucia_pruebatec2.git
       ```
-  2. **Tomcat**:  
-  3. **Abrir proyecto**: Abrimos [Intellij IDEA](https://www.youtube.com/watch?v=eicDTFhVXxs) y comprobar si tenemos el JDK 17,
-     para hacerlo funcionar (si no tienes ninguno de los dos instálalo).
-     Una vez hecho abrimos el proyecto Maven donde está la aplicación, 
+  2. **Encender el XAMPP**: Enciende MySQL y Apache (Start 'Empezar') y Admin. 
+  3. **Apache Tomcat**: Un servidor web y contenerdor servlets, diseñado para realizar aplicaciones web.
+      1. Descarga el [Tomcat 10.1.34.zip](https://tomcat.apache.org/download-10.cgi) Windows 64-bits;
+      2. Extrae todos los archivos y coger la carpeta que contiene y llevarla al C:\jakartav
+      3. Edita las variables de entorno porque necesita JAVA_HOME si no lo tienes pon en el navegador 'Editar variables de entorno' y poner en las
+         Variables de entorno > Crea una nueva bajo la sintaxis **JAVA_HOME = C:\Program Files\Java\jdk-...** sales aceptando los campos.
+      4. Para probar su instalación abre en cmd en Administrador ve al directorio
+        ```
+            cd C:\jakarta10\apache-tomcat-10.1.34\bin
+            startup
+        ```
+      5. Ponemos en el navegador la url http://localhost:8080.
+      6. Para detenerlo inserte **shutdown**.
+  4. **Abrir proyecto**: Abrimos [Intellij IDEA](https://www.youtube.com/watch?v=eicDTFhVXxs) y comprobar si tenemos el JDK 17,
+     para hacerlo funcionar (si no tienes ninguno de los dos instálalo). 
+     También necesitamos el plugin Tomcat, para eso vamos a Intellij File > Settings > Plugins > **Smart Tomcat** (a secas). Aplicamos cambios.
+     Luego File > Settings > Tomcat Server > (+) > C:\jakarta10\apache-tomcat-10.1.34 aceptamos los cambios.
+     Una vez hecho abrimos el app donde está la aplicación,
      así que ve a File > Open (Ctrl + O) > C:\Users\nnnn\Documents\blancoLucia_pruebatec2\app.
-  3. **Encender el XAMPP**: Enciende MySQL y Apache (Start 'Empezar') y Admin.
-  4. **Workbench**: Enciéndelo y crea la conexión. 
+  5. **Workbench**: Enciéndelo y crea la conexión. 
       * [Instalar Workbench](https://support.academicsoftware.eu/hc/es/articles/360007014958-C%C3%B3mo-instalar-MySQL-Workbench)
       * [Conexión XAMPP con Workbech](https://www.youtube.com/watch?v=7ZD0D5m0jB0) 
-  5. **DB (Base de datos)**: Coge el script **turnero.sql**, copia su sintaxis y lo pegas en Workbench. 
+  6. **DB (Base de datos)**: Coge el script **turnero.sql**, copia su sintaxis y lo pegas en Workbench. 
     Una vez hecho lo ejecutas pinchando en el icono del primer rayo :zap: que veas. Refresca
-    DB  que se encuentra en '**SCHEMAS**' pinchando en lado derecho :arrows_counterclockwise:. 
+    DB que se encuentra en '**SCHEMAS**' pinchando en lado derecho :arrows_counterclockwise:. 
      ``` 
           -- Creación de Base de datos
           CREATE DATABASE turnero_db;
@@ -62,44 +75,57 @@ En la práctica vamos a realizar la
              ('2025-06-24',"Oculista",'ATENDIDO', 9), ('2025-11-26',"Médica",'ESPERA', 10),
              ('2025-12-12',"Logopeda",'ATENDIDO', 10);
      ```
-  6. **Tabla empleado**: Crear otro script SQL y comprueba con la consulta 'SELECT * FROM empleado'.
-  7. Comprobar los archivos de configuración. Debemos ver si los parámetros están bien.
-     * **pom.xml**: Debe tener las librerías externas de Hibernate. Te mostrará el icono de Maven para refrescar
+  7. **Tablas de DB**: Crear otro script SQL y comprueba con la consulta 'SELECT * FROM turno/ciudadano'.
+  8. Comprobar los archivos de configuración. Debemos ver si los parámetros están bien.
+     * **pom.xml**: Debe tener las librerías externas de Hibernate y para los servlets de Tomcat. Te mostrará el icono de Maven para refrescar
       en la parte derecha arriba del fichero para descargar las librerías. Una vez terminado, te muestra en la sección
       **External Libraries**.
           ```
             <!--Instalar las librerías externas para la conexión de una DB-->
                <dependencies>
-                 <!--  JPA (Hibernate)  -->
-                 <dependency>
+                   <dependency>
+                     <groupId>junit</groupId>
+                     <artifactId>junit</artifactId>
+                     <version>3.8.1</version>
+                     <scope>test</scope>
+                   </dependency>
+                   <!-- JPA (Hibernate) -->
+                   <dependency>
                      <groupId>org.hibernate</groupId>
                      <artifactId>hibernate-core</artifactId>
                      <version>6.2.7.Final</version>
-                 </dependency>
-                 <!--  JPA API  -->
-                 <dependency>
-                    <groupId>jakarta.persistence</groupId>
-                    <artifactId>jakarta.persistence-api</artifactId>
-                    <version>3.1.0</version>
-                 </dependency>
-                <!-- Conector mysql workbench 8.0.33 -->
-                <dependency>
-                    <groupId>mysql</groupId>
-                    <artifactId>mysql-connector-java</artifactId>
-                    <version>8.0.33</version>
-                </dependency>
+                   </dependency>
+                   <!-- JPA (API) -->
+                   <dependency>
+                     <groupId>jakarta.persistence</groupId>
+                     <artifactId>jakarta.persistence-api</artifactId>
+                     <version>3.1.0</version>
+                   </dependency>
+                   <!--Conector mysql workbench (8.0.33)-->
+                   <dependency>
+                     <groupId>mysql</groupId>
+                     <artifactId>mysql-connector-java</artifactId>
+                     <version>8.0.33</version>
+                   </dependency>
+                   <!-- Jakarta Servlet (API) -->
+                   <dependency>
+                     <groupId>jakarta.servlet</groupId>
+                     <artifactId>jakarta.servlet-api</artifactId>
+                     <version>5.0.0</version>
+                     <scope>provided</scope>
+                   </dependency>
                </dependencies>
           ```
      * **/src/main/resources/META-INF/persistence.xml**: Comprobar la base de datos, el user, la dirección IP, el puerto (3306 por defecto), el password y el persistence-unit
       porque con él podemos realizar la JPA (Java Persistence API).
           ```
            <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
-            <persistence-unit name="gt_empleados"> <!--Ojo con este elemento-->
+            <persistence-unit name="examplePU"> <!--Ojo con este elemento-->
               <class>com.ejemplo.Empleado</class>
               <properties>
                  <!--  Configuración de la base de datos  -->
                  <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-                 <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/empleados?serverTimezone=UTC"/>
+                 <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/turnero_db?serverTimezone=UTC"/>
                  <property name="javax.persistence.jdbc.user" value="root"/>
                  <property name="javax.persistence.jdbc.password" value=""/>
                  <!--  Mostrar sentencias SQL  -->
@@ -114,7 +140,7 @@ En la práctica vamos a realizar la
      * **/src/main/java/org/example/persistence/ConfigJPA**: Para establecer la conexión a la DB empleados, debe coincidir con el
       persistence-unit. **¡¡No lo cambies !!**
          ```
-           package org.example.persistence;
+           package com.example.persistence;
 
            import jakarta.persistence.EntityManager;
            import jakarta.persistence.EntityManagerFactory;
@@ -124,7 +150,7 @@ En la práctica vamos a realizar la
 
              //Para establecer la conexión con la DB
              private static final EntityManagerFactory emf =
-                                  Persistence.createEntityManagerFactory("gt_empleados");
+                                  Persistence.createEntityManagerFactory("examplePU");
 
              public static EntityManager getEntityManager() {
                      return emf.createEntityManager();
@@ -138,16 +164,17 @@ En la práctica vamos a realizar la
          ```
        
 ## Estructura de JPA
- En el proyecto lo dividimos en tres directorios específicos para mejor organización 
- y limpieza de código, se encuentran en **/src/main/java/org.example**. 
+ En el proyecto lo dividimos en cinco directorios específicos para mejor organización 
+ y limpieza de código, se encuentran en **/src/main/java/com.example**. 
  Se dividen de esta manera:
-   * controllers: Métodos que se realizan bajo las operaciones CRUD sobre la entidad Empleado.
-   * entities: Se encuentran la plantilla de Empleado donde tiene los atributos de la tabla 
+   * controllers: Métodos que se realizan bajo las operaciones CRUD sobre la entidad Ciudadano y Turno.
+   * entities: Se encuentran las plantillas Turno y Ciudadano donde tiene los atributos de la tabla 
      con su tipo de dato correspondiente. Métodos para cambiar y mostrar variables. Se especifica
-     anotaciones Hibernate '@'.
-   * persistence: Configuración de Hibernate DB "ConfigJPA" y el mapeo para realizar las operaciones CRUD "EmpleadoJPA".
-   * Main: Fichero en donde interactuaremos todo el rato. Introduciendo datos mientras que la app 
-     realizará la entrada y salida de datos, la validación de datos y las operaciones CRUD. 
+     anotaciones Hibernate '@'. También donde realizamos las relaciones JPA, un ciudadano puede tener varios turnos y un turno
+     es único para un ciudadano (1:N). 
+   * exceptions: Donde se realiza el manejo de errores por ejemplo en la validación de datos.
+   * persistence: Configuración de Hibernate DB "ConfigJPA" y el mapeo para realizar las operaciones CRUD "GenericoJPA".
+   * servlets: Ficheros donde 
 
 ## ¿Cómo ejecutar?
    Una vez conectado las conexiones a la base de datos y comprobado los parámetros debemos encender la aplicación,

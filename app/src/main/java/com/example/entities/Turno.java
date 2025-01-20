@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
+//Hace referencia a la tabla podemos poner(name='')
 @Entity
 public class Turno {
     //Atributos
@@ -17,6 +18,7 @@ public class Turno {
     @Column(nullable = false)
     private String descripcion;
 
+    /*Columna valor no es nulo y hay dos tipos de estados*/
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private TipoEstado estado;
@@ -26,6 +28,7 @@ public class Turno {
         ATENDIDO
     }
 
+    /* Un turno está asociado a un solo empleado y especifica la columna clave foránea de la entidad Ciudadano, como en la DB*/
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "ciudadano_id",nullable = false)
     private Ciudadano ciudadano;

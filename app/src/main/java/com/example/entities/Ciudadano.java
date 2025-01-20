@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.util.Set;
 
+//Hace referencia a la tabla podemos poner(name='')
 @Entity
 public class Ciudadano {
 
@@ -22,8 +23,8 @@ public class Ciudadano {
     //Un ciudadano tiene varios turnos
     /* Hacemos como una clave foránea
     *  fetch : para buscar todos los datos como un SELECT * FROM
-    *  cascade: actualizar en forma casacada
-    *  orphanRemol: eliminación por casacada
+    *  cascade: actualizar en forma cascada
+    *  orphanRemol: eliminación por cascada
     * */
     @OneToMany(mappedBy = "ciudadano",
                fetch = FetchType.EAGER,
