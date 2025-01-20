@@ -1,6 +1,7 @@
 ## **Prueba Técnica Manejo de Turnos** 
 
-En la práctica vamos a realizar la 
+En la práctica vamos a realizar una gestión de turnos donde están presentes los trámites a realizar en ellas aplicaremos las
+operaciones CRUD con una base de datos bajo el empleo de JPA (Java Persistence API) y JSP para que el usuario pueda interactuar.
 
 ## Antes de comenzar:
 
@@ -11,8 +12,8 @@ En la práctica vamos a realizar la
       ```
   2. **Encender el XAMPP**: Enciende MySQL y Apache (Start 'Empezar') y Admin. 
   3. **Apache Tomcat**: Un servidor web y contenerdor servlets, diseñado para realizar aplicaciones web.
-      1. Descarga el [Tomcat 10.1.34.zip](https://tomcat.apache.org/download-10.cgi) Windows 64-bits;
-      2. Extrae todos los archivos y coger la carpeta que contiene y llevarla al C:\jakartav
+      1. Descarga el [Tomcat 10.1.34.zip](https://tomcat.apache.org/download-10.cgi) Windows 64-bits. Siempre en zip.
+      2. Extrae todos los archivos y coger la carpeta que contiene y llevarla al C:\jakarta10
       3. Edita las variables de entorno porque necesita JAVA_HOME si no lo tienes pon en el navegador 'Editar variables de entorno' y poner en las
          Variables de entorno > Crea una nueva bajo la sintaxis **JAVA_HOME = C:\Program Files\Java\jdk-...** sales aceptando los campos.
       4. Para probar su instalación abre en cmd en Administrador ve al directorio
@@ -24,7 +25,7 @@ En la práctica vamos a realizar la
       6. Para detenerlo inserte **shutdown**.
   4. **Abrir proyecto**: Abrimos [Intellij IDEA](https://www.youtube.com/watch?v=eicDTFhVXxs) y comprobar si tenemos el JDK 17,
      para hacerlo funcionar (si no tienes ninguno de los dos instálalo). 
-     También necesitamos el plugin Tomcat, para eso vamos a Intellij File > Settings > Plugins > **Smart Tomcat** (a secas). Aplicamos cambios.
+     También necesitamos el plugin Tomcat, para eso vamos a Intellij File > Settings > Plugins > **Smart Tomcat** (a secas). Aplicamos los cambios.
      Luego File > Settings > Tomcat Server > (+) > C:\jakarta10\apache-tomcat-10.1.34 aceptamos los cambios.
      Una vez hecho abrimos el app donde está la aplicación,
      así que ve a File > Open (Ctrl + O) > C:\Users\nnnn\Documents\blancoLucia_pruebatec2\app.
@@ -174,14 +175,16 @@ En la práctica vamos a realizar la
      es único para un ciudadano (1:N). 
    * exceptions: Donde se realiza el manejo de errores por ejemplo en la validación de datos.
    * persistence: Configuración de Hibernate DB "ConfigJPA" y el mapeo para realizar las operaciones CRUD "GenericoJPA".
-   * servlets: Ficheros donde 
+   * servlets: Unas clases que reciben peticiones HTTP para nosotros necesitamos GET (obtener resultados) y POST(coger parámetros)
+      en las que generamos páginas dinámicas HTML.
 
+ Luego otro directorio que es **/app/webapp** donde se almacena los JSP además empleamos lenguaje JSP y HTML. Se divide de esta manera:
+  * partials: Fragmentos que se reutilizarán en los archivos principales.
+  * public: 
 ## ¿Cómo ejecutar?
    Una vez conectado las conexiones a la base de datos y comprobado los parámetros debemos encender la aplicación,
-   para eso debemos dirigirnos al Main y lo ejecutamos poniendo en el panel derecho superior una lista desplegable y poner
-   'Current File' y pinchar la flecha :arrow_forward: que se encuentra al lado.  Al principio nos pide nuestro nombre por teclado y luego nos ofrece
-   diferentes opciones en las que debemos escoger tecleando un número, si no está en ese rango nos pide volver a introducirlo, también en la 
-   entrada de datos cuando insertemos un empleado o lo actualicemos.
-   Para detener el programs debemos pulsar -1.
+   para eso debemos dirigirnos al pom.xml y lo ejecutamos poniendo en el panel derecho superior una lista desplegable y poner
+   'Current File' y pinchar la flecha :arrow_forward: que se encuentra al lado.  
+   Para detener el programs debemos pulsar se cierra el navegador y se detiene en el recuadro rojo del 'Run'.
      
    
