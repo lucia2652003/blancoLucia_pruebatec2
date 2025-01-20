@@ -61,7 +61,7 @@
             </tbody>
         </table>
     </div>
-        
+    <%@ include file="partials/footer.jsp" %> 
 </body>
 
 </html>

@@ -11,7 +11,7 @@ import java.util.Optional;
 
 public class GenericoJPA<T> {
 
-    private Class<T> entidadGenerica;
+    private Class<T> entidadGenerica;//Cualquier Tipo de dato
 
     public GenericoJPA(Class<T> entidadGenerica) {
         this.entidadGenerica = entidadGenerica;
