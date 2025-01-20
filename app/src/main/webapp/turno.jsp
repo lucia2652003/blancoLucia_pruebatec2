@@ -40,8 +40,9 @@
             </thead>
     
             <tbody>
-                <% List<Turno> listado = (List<Turno>) request.getAttribute("listado");
-                        for(Turno turno: listado) { %>
+                <% List<Turno> listado = (List<Turno>) request.getAttribute("listado"); %>
+                        <p class="total">Num. turnos: <%= listado.size() %></p>
+                        <% for(Turno turno: listado) { %>
                         <tr>
                             <td>
                                 <%=turno.getCiudadano().getNombre() %>

@@ -1,29 +1,43 @@
 /*Presentación del body*/
-body, select, input[type='submit'], input[type='text'], button{
+body,
+select,
+input[type='submit'],
+input[type='text'],
+button {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.presentacion{
+p {
+    text-align: center;
+}
+
+.disenho_image{
+    margin-left: 390px;
+    width: 50%;
+    height: 58%;
+    border: 1px solid black;
+}
+
+.presentacion {
     border-radius: 12px;
     border: solid 1px black;
     padding: 0.5pc;
 }
 
 /*Diseñador del cabecera*/
-
-header{
+header {
     height: 20vh;
     background-color: rgb(175, 175, 226);
     display: flex;
     justify-content: space-evenly;
 }
 
-header img{
+header img {
     width: 138%;
 }
 
 /* Diseño del navegador */
-nav ul{
+nav ul {
     float: right;
     list-style: none;
 }
@@ -31,7 +45,7 @@ nav ul{
 nav li {
     float: left;
 }
-  
+
 nav li a {
     display: block;
     text-align: center;
@@ -39,98 +53,111 @@ nav li a {
     text-decoration: none;
 }
 
-nav li a:hover{
+nav li a:hover {
     background-color: aliceblue;
     color: black;
     font-weight: bold;
 }
 
 /*Diseño de la tabla*/
-table{
+table {
     border: 2px solid black;
     margin-left: 500px;
     margin-top: 20px;
     text-align: center;
 }
 
-th, td{
+th,
+td {
     text-align: left;
     padding: 12px;
 }
 
+th {
+    border-bottom: 1px solid black;
+}
+
+/*Total de turnos*/
+.total {
+    text-align: center;
+    margin-left: 540px;
+}
+
 /* Encabezados */
-h1{
+h1 {
     text-align: center;
 }
 
 /*Formulario*/
-fieldset{
+fieldset {
     margin-left: 500px;
     margin-right: 500px;
     text-align: left;
 }
 
-input[type='date'], input[type="text"]{
+input[type='date'],
+input[type="text"] {
     width: 500px;
     height: 45px;
     font-size: large;
 }
 
-button{
+button {
     padding: 0.2cm;
     background-color: rgb(107, 192, 54);
     color: black;
+    font-size: large;
 }
 
-button:hover{
+button:hover {
     background-color: rgb(160, 203, 134);
 }
 
-.impo{
+.impo {
     color: red;
 }
 
-select{
+select {
     background-color: whitesmoke;
     font-size: large;
 }
 
-.disenho_select{
-    height:45px;
-    width:600px;
+.disenho_select {
+    height: 45px;
+    width: 600px;
 }
 
-.filtra_select{
+.filtra_select {
     height: 35px;
-    width:600px;
+    width: 600px;
 }
 
 /*Diseño de footer*/
-footer{
+footer {
     background-color: plum;
     padding: 23px;
     display: flex;
     justify-content: space-evenly;
 }
 
-footer ul{
+footer ul {
     text-decoration: none;
     text-align: center;
 }
 
-footer li{
+footer li {
     list-style: none;
     margin-top: 12px;
 }
 
-footer li a{
+footer li a {
     text-decoration: none;
     padding: 5px 6px;
-    
+
 }
 
 /*Al pasar por encima se cambia el color*/
-footer a:hover{
+footer a:hover {
     background-color: aliceblue;
     color: black;
     font-weight: bold;

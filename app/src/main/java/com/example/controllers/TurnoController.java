@@ -40,7 +40,7 @@ public class TurnoController {
     //Validación de datos para evitar la inserción
     private void validacionTurno(String fecha, String descripcion) throws InvalidTurno {
         //Campos vacíos
-        if(descripcion.isEmpty()){
+        if(descripcion.isEmpty() || fecha.isEmpty()){
             throw new InvalidTurno("No puedes dejar campos vacíos");
         }
 
@@ -62,7 +62,8 @@ public class TurnoController {
                             LocalDate.parse(fecha).isBefore(turno.getFecha())
                                     && turno.getEstado().equals(tipo))
                     .collect(Collectors.toList());
-        }else{//Volver al listado anterior (muestre todos los turnos)
+        }
+        else{//Volver al listado anterior (muestre todos los turnos)
             filtracion = todosTurnos;
             System.out.println("No hay turnos de esa fecha ni del estado que presenta");
         }

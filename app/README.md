@@ -12,17 +12,17 @@ operaciones CRUD con una base de datos bajo el empleo de JPA (Java Persistence A
       ```
   2. **Encender el XAMPP**: Enciende MySQL y Apache (Start 'Empezar') y Admin. 
   3. **Apache Tomcat**: Un servidor web y contenerdor servlets, diseñado para realizar aplicaciones web.
-      1. Descarga el [Tomcat 10.1.34.zip](https://tomcat.apache.org/download-10.cgi) Windows 64-bits. Siempre en zip.
-      2. Extrae todos los archivos y coger la carpeta que contiene y llevarla al C:\jakarta10
-      3. Edita las variables de entorno porque necesita JAVA_HOME si no lo tienes pon en el navegador 'Editar variables de entorno' y poner en las
+      1) Descarga el [Tomcat 10.1.34.zip](https://tomcat.apache.org/download-10.cgi) Windows 64-bits. Siempre en zip.
+      2) Extrae todos los archivos y coger la carpeta que contiene y llevarla al C:\jakarta10
+      3) Edita las variables de entorno porque necesita JAVA_HOME si no lo tienes pon en el navegador 'Editar variables de entorno' y poner en las
          Variables de entorno > Crea una nueva bajo la sintaxis **JAVA_HOME = C:\Program Files\Java\jdk-...** sales aceptando los campos.
-      4. Para probar su instalación abre en cmd en Administrador ve al directorio
+      4) Para probar su instalación abre en cmd en Administrador ve al directorio.
         ```
             cd C:\jakarta10\apache-tomcat-10.1.34\bin
             startup
         ```
-      5. Ponemos en el navegador la url http://localhost:8080.
-      6. Para detenerlo inserte **shutdown**.
+      5) Ponemos en el navegador la url http://localhost:8080.
+      6) Para detenerlo inserte **shutdown**.
   4. **Abrir proyecto**: Abrimos [Intellij IDEA](https://www.youtube.com/watch?v=eicDTFhVXxs) y comprobar si tenemos el JDK 17,
      para hacerlo funcionar (si no tienes ninguno de los dos instálalo). 
      También necesitamos el plugin Tomcat, para eso vamos a Intellij File > Settings > Plugins > **Smart Tomcat** (a secas). Aplicamos los cambios.
@@ -199,7 +199,7 @@ operaciones CRUD con una base de datos bajo el empleo de JPA (Java Persistence A
    URL http://localhost:8080/app pinchas ahí. Y te aparece el Home donde está la cabecera y en el navegador te muestra los items:
    * Home
    * Listado Turnos: Donde nos muestra los turnos con los ciudadanos correspondientes y el estado de cada turnos. Se filtran los turnos
-     que aparecen desde la fecha asignada y el tipo de estado. Si no le pasas fecha vuelve al listado anterior. 
+     que aparecen desde la fecha asignada y el tipo de estado. Si no le pasas fecha vuelve al listado anterior. Muestra total de turnos. 
    * Creación Turnos: Donde insertemos los datos y cuando le damos a enviar nos devuelve al listado de turnos donde podemos ver o no
      el turno del ciudadano asignado.
    Para detener el programa debemos cerrar el navegador y se detiene en el recuadro rojo del 'Run'.

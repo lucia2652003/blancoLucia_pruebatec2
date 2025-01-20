@@ -11,7 +11,9 @@
 <body>
     <%@ include file="partials/header.jsp" %>
     <div class="presentacion">
-        <h2>Hello World!</h2>
+        <h1>Hello World!</h1>
+        <p>Preparada para introducir tu agenda, aqu&iacute; podras listar y agregar los turnos.</p>
+        <img src="./public/image/turnos.png" alt="index_turnos" title="index_turnos"  class="disenho_image">
     </div>    
     <%@ include file="partials/footer.jsp" %>    
 </body>
