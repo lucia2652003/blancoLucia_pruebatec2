@@ -176,15 +176,32 @@ operaciones CRUD con una base de datos bajo el empleo de JPA (Java Persistence A
    * exceptions: Donde se realiza el manejo de errores por ejemplo en la validación de datos.
    * persistence: Configuración de Hibernate DB "ConfigJPA" y el mapeo para realizar las operaciones CRUD "GenericoJPA".
    * servlets: Unas clases que reciben peticiones HTTP para nosotros necesitamos GET (obtener resultados) y POST(coger parámetros)
-      en las que generamos páginas dinámicas HTML.
+      en las que generamos páginas dinámicas HTML. **Ojo no cambies la WebServlet**
 
  Luego otro directorio que es **/app/webapp** donde se almacena los JSP además empleamos lenguaje JSP y HTML. Se divide de esta manera:
-  * partials: Fragmentos que se reutilizarán en los archivos principales.
-  * public: 
+  * partials: Archivos JSP que se van a reutilizar en los ficheros principales (fuera del directorio). 
+    Por ejemplo la cabecera o pié de página. Nos aparece en los principales como la sintaxis 
+    ````
+      <%@ include file="partials/header.jsp" %>
+    ````
+  * public: Contine directorios donde están almacenados imágenes (image), el diseño de HTML (css) y avise lo que le va a mostrar (js).
+  * index.jsp: Es el primer HTML que se nos muestra cuando iniciamos el programa.
+  * turno.jsp: Listado de los turnos de los diferentes ciudadanos y empleamos sintaxis JSP para que nos lo muestren
+  * formTurno.jsp: Formulario para crear los turnos.
+
+   No cambies los nombres de los JSP ni el documento, si no nos produce errores de que no existen.
+   Puedes verlos en Visual Studio Code y pero antes debes instalar la Extension JSP "EJS language support".
 ## ¿Cómo ejecutar?
    Una vez conectado las conexiones a la base de datos y comprobado los parámetros debemos encender la aplicación,
    para eso debemos dirigirnos al pom.xml y lo ejecutamos poniendo en el panel derecho superior una lista desplegable y poner
-   'Current File' y pinchar la flecha :arrow_forward: que se encuentra al lado.  
-   Para detener el programs debemos pulsar se cierra el navegador y se detiene en el recuadro rojo del 'Run'.
+   'Current File' y pinchar la flecha :arrow_forward: que se encuentra al lado nos aparece otro formulario de configuración y 
+   seleccionamos en un campo llamado 'USE CLASSPATH OF MODULE: /app'> Aplly > Run. Nos debe aparecer en la terminal al final una 
+   URL http://localhost:8080/app pinchas ahí. Y te aparece el Home donde está la cabecera y en el navegador te muestra los items:
+   * Home
+   * Listado Turnos: Donde nos muestra los turnos con los ciudadanos correspondientes y el estado de cada turnos. Se filtran los turnos
+     que aparecen desde la fecha asignada y el tipo de estado. Si no le pasas fecha vuelve al listado anterior. 
+   * Creación Turnos: Donde insertemos los datos y cuando le damos a enviar nos devuelve al listado de turnos donde podemos ver o no
+     el turno del ciudadano asignado.
+   Para detener el programa debemos cerrar el navegador y se detiene en el recuadro rojo del 'Run'.
      
    

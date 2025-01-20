@@ -35,7 +35,7 @@ public class TurnoServlet extends HttpServlet {
 
         List<Turno> listado = tc.filtroTurno(estado, fecha);
 
-        request.setAttribute("listado", listado);//Debe coincidir e
+        request.setAttribute("listado", listado);//Debe coincidir en el JSP
         request.getRequestDispatcher("turno.jsp").forward(request, response);
     }
 
