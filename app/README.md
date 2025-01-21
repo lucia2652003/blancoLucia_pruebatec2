@@ -138,7 +138,7 @@ operaciones CRUD con una base de datos bajo el empleo de JPA (Java Persistence A
             </persistence-unit>
            </persistence>
           ```
-     * **/src/main/java/org/example/persistence/ConfigJPA**: Para establecer la conexión a la DB empleados, debe coincidir con el
+     * **/src/main/java/com/example/persistence/ConfigJPA**: Para establecer la conexión a la DB, debe coincidir con el
       persistence-unit. **¡¡No lo cambies !!**
          ```
            package com.example.persistence;
@@ -182,9 +182,9 @@ operaciones CRUD con una base de datos bajo el empleo de JPA (Java Persistence A
   * partials: Archivos JSP que se van a reutilizar en los ficheros principales (fuera del directorio). 
     Por ejemplo la cabecera o pié de página. Nos aparece en los principales como la sintaxis 
     ````
-      <%@ include file="partials/header.jsp" %>
+      <%@ include file="partials/nnnn.jsp" %>
     ````
-  * public: Contine directorios donde están almacenados imágenes (image), el diseño de HTML (css) y avise lo que le va a mostrar (js).
+  * public: Contiene directorios donde están almacenados imágenes (image), el diseño de HTML (css) y avise lo que le va a mostrar (js).
   * index.jsp: Es el primer HTML que se nos muestra cuando iniciamos el programa.
   * turno.jsp: Listado de los turnos de los diferentes ciudadanos y empleamos sintaxis JSP para que nos lo muestren
   * formTurno.jsp: Formulario para crear los turnos.
@@ -202,6 +202,6 @@ operaciones CRUD con una base de datos bajo el empleo de JPA (Java Persistence A
      que aparecen desde la fecha asignada y el tipo de estado. Si no le pasas fecha vuelve al listado anterior. Muestra total de turnos. 
    * Creación Turnos: Donde insertemos los datos y cuando le damos a enviar nos devuelve al listado de turnos donde podemos ver o no
      el turno del ciudadano asignado.
-   Para detener el programa debemos cerrar el navegador y se detiene en el recuadro rojo del 'Run'.
+   Para detener el programa debemos cerrar el navegador y se detiene en el cuadrado rojo del 'Run' que se encuentra en la terminal.
      
    
