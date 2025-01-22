@@ -34,6 +34,7 @@
         <table>
             <thead>
                 <th>Ciudadano</th>
+                <th>N&uacute;mero Turno</th>
                 <th>Nombre Turno</th>
                 <th>Fecha Turno</th>
                 <th>Estado Turno</th>
@@ -47,6 +48,9 @@
                             <td>
                                 <%=turno.getCiudadano().getNombre() %>
                                     <%=turno.getCiudadano().getApellido() %>
+                            </td>
+                            <td>
+                                <%=turno.getId() %>
                             </td>
                             <td>
                                 <%=turno.getDescripcion() %>
