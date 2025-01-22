@@ -199,8 +199,8 @@ operaciones CRUD con una base de datos bajo el empleo de JPA (Java Persistence A
    URL http://localhost:8080/app pinchas ahí. Y te aparece el Home donde está la cabecera y en el navegador te muestra los items:
    * Home
    * Listado Turnos: Donde nos muestra los turnos con los ciudadanos correspondientes y el estado de cada turnos. Se filtran los turnos
-     que aparecen desde la fecha asignada y el tipo de estado. Si no le pasas fecha vuelve al listado anterior. Muestra total de turnos. 
-   * Creación Turnos: Donde insertemos los datos y cuando le damos a enviar nos devuelve al listado de turnos donde podemos ver o no
+     que aparecen desde la fecha asignada y el tipo de estado. Si no le pasamos fecha vuelve al listado anterior. Muestra total de turnos. 
+   * Creación Turnos: Donde insertamos los datos y cuando le damos al botón nos devuelve al listado de turnos donde podemos ver o no
      el turno del ciudadano asignado.
    Para detener el programa debemos cerrar el navegador y se detiene en el cuadrado rojo del 'Run' que se encuentra en la terminal.
      
