@@ -8,7 +8,6 @@ import java.util.List;
 public class CiudadanoController {
     GenericoJPA<Ciudadano> genericoJPA;
 
-
     public CiudadanoController() {
         this.genericoJPA = new GenericoJPA<>(Ciudadano.class);
     }

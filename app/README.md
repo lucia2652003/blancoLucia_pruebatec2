@@ -1,7 +1,8 @@
 ## **Prueba Técnica Manejo de Turnos** 
 
 En la práctica vamos a realizar una gestión de turnos donde están presentes los trámites a realizar en ellas aplicaremos las
-operaciones CRUD con una base de datos bajo el empleo de JPA (Java Persistence API) y JSP para que el usuario pueda interactuar.
+operaciones CRUD (Crear, Leer, Actualizar, Eliminar) para interactuar con una DB, bajo el empleo de JPA (Java Persistence API) 
+y JSP (JavaServer Pages) para que el usuario pueda interactuar, recibir y solicitar peticiones HTTP.
 
 ## Antes de comenzar:
 

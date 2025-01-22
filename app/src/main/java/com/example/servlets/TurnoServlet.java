@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+//URL /app/listadoTurno
 @WebServlet("/listadoTurno")
 public class TurnoServlet extends HttpServlet {
     TurnoController tc = new TurnoController();
@@ -20,7 +21,7 @@ public class TurnoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
         List<Turno> listado = tc.findAll(); //Listado de turnos
 
-        request.setAttribute("listado", listado);
+        request.setAttribute("listado", listado); //Establecer un parámetro para JSP, hay que castearlo
 
         //Redirigir a la vista JSP
         request.getRequestDispatcher("turno.jsp").forward(request, resp);

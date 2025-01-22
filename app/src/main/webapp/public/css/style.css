@@ -162,3 +162,9 @@ footer a:hover {
     color: black;
     font-weight: bold;
 }
+
+.subir{
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}

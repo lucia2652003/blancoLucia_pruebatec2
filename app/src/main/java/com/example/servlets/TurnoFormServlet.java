@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-//Para establecer en URL a donde se va a dirigir
+//Para establecer URL a donde va a dirigir
 @WebServlet("/crearTurno")
 public class TurnoFormServlet extends HttpServlet {
 

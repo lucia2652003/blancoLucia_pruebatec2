@@ -62,8 +62,7 @@ public class TurnoController {
                             LocalDate.parse(fecha).isBefore(turno.getFecha())
                                     && turno.getEstado().equals(tipo))
                     .collect(Collectors.toList());
-        }
-        else{//Volver al listado anterior (muestre todos los turnos)
+        }else{//Volver al listado anterior (muestre todos los turnos)
             filtracion = todosTurnos;
             System.out.println("No hay turnos de esa fecha ni del estado que presenta");
         }

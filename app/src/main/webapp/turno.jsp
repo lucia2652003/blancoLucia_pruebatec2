@@ -11,7 +11,9 @@
 </head>
 
 <body>
+    <a name="arriba"></a>
     <%@ include file="partials/header.jsp" %>
+    
     <div class="presentacion">
         <h1>Lista de turnos</h1>
         <fieldset>
@@ -41,6 +43,7 @@
             </thead>
     
             <tbody>
+                <%-- Listado de los turnos --%>
                 <% List<Turno> listado = (List<Turno>) request.getAttribute("listado"); %>
                         <p class="total">Num. turnos: <%= listado.size() %></p>
                         <% for(Turno turno: listado) { %>
@@ -50,7 +53,7 @@
                                     <%=turno.getCiudadano().getApellido() %>
                             </td>
                             <td>
-                                <%=turno.getId() %>
+                                000000-0000<%=turno.getId() %>
                             </td>
                             <td>
                                 <%=turno.getDescripcion() %>
@@ -65,8 +68,10 @@
                         <% } %>
             </tbody>
         </table>
+        <a href="#arriba"  class="subir">Volver arriba</a>
     </div>
     <%@ include file="partials/footer.jsp" %> 
+    
 </body>
 
 </html>

@@ -9,6 +9,7 @@ import jakarta.persistence.criteria.Root;
 import java.util.List;
 import java.util.Optional;
 
+//Realizarán las operaciones CRUD de BD Turno
 public class GenericoJPA<T> {
 
     private Class<T> entidadGenerica;//Cualquier Tipo de dato

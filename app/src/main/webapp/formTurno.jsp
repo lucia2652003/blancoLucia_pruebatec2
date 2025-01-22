@@ -12,8 +12,10 @@
 </head>
 
 <body>
+   
     <%@ include file="partials/header.jsp" %>
         <div class="presentacion">
+            <a name="arriba"></a>
             <h1>Creaci&oacute;n de turnos</h1>
             <fieldset>
                 <legend>Formulario Turnos</legend>
@@ -53,7 +55,9 @@
                     <button onclick="enviar()">Crear turno</button>
                 </form>
             </fieldset>
+            <a href="#arriba" class="subir">Volver arriba</a>
         </div>
+        
         <%@ include file="partials/footer.jsp" %>    
 </body>
 
