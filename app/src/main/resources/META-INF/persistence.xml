@@ -1,6 +1,6 @@
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
     <persistence-unit name="examplePU"> <!--Cuando hagamos la config de jpa lo veremos-->
-        <class>com.ejemplo.Pelicula</class>
+        <class>com.example.entities.Turno</class>
         <properties>
             <!-- Configuración de la base de datos -->
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />

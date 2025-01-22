@@ -123,7 +123,7 @@ y JSP (JavaServer Pages) para que el usuario pueda interactuar, recibir y solici
           ```
            <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
             <persistence-unit name="examplePU"> <!--Ojo con este elemento-->
-              <class>com.ejemplo.Empleado</class>
+              <class>com.example.entities.Turno</class>
               <properties>
                  <!--  Configuración de la base de datos  -->
                  <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
@@ -177,7 +177,7 @@ y JSP (JavaServer Pages) para que el usuario pueda interactuar, recibir y solici
    * exceptions: Donde se realiza el manejo de errores por ejemplo en la validación de datos.
    * persistence: Configuración de Hibernate DB "ConfigJPA" y el mapeo para realizar las operaciones CRUD "GenericoJPA".
    * servlets: Unas clases que reciben peticiones HTTP para nosotros necesitamos GET (obtener resultados) y POST(coger parámetros)
-      en las que generamos páginas dinámicas HTML. **Ojo no cambies la WebServlet**
+      en las que generamos páginas dinámicas HTML. **Ojo no cambies las WebServlet**
 
  Luego otro directorio que es **/app/webapp** donde se almacena los JSP además empleamos lenguaje JSP y HTML. Se divide de esta manera:
   * partials: Archivos JSP que se van a reutilizar en los ficheros principales (fuera del directorio). 
@@ -199,15 +199,10 @@ y JSP (JavaServer Pages) para que el usuario pueda interactuar, recibir y solici
    seleccionamos en un campo llamado 'USE CLASSPATH OF MODULE: /app'> Aplly > Run. Nos debe aparecer en la terminal al final una 
    URL http://localhost:8080/app pinchas ahí. Y te aparece el Home donde está la cabecera y en el navegador te muestra los items:
    * Home
-   * Listado Turnos: Donde nos muestra los turnos con los ciudadanos correspondientes y el estado de cada turnos. Se filtran los turnos
-<<<<<<< HEAD
+   * Listado Turnos: Donde nos muestra los turnos con los ciudadanos correspondientes y el estado de cada turno. Se filtran los turnos
      que aparecen desde la fecha asignada y el tipo de estado. Si no le pasas fecha vuelve al listado anterior. Muestra total de turnos. 
    * Creación Turnos: Donde insertamos los datos y cuando le damos a enviar nos devuelve al listado de turnos donde podemos ver o no
-=======
-     que aparecen desde la fecha asignada y el tipo de estado. Si no le pasamos fecha vuelve al listado anterior. Muestra total de turnos. 
-   * Creación Turnos: Donde insertamos los datos y cuando le damos al botón nos devuelve al listado de turnos donde podemos ver o no
->>>>>>> 5712cc935f755639dede30233908c8a756dfbd97
-     el turno del ciudadano asignado.
+     el turno validado.
    Para detener el programa debemos cerrar el navegador y se detiene en el cuadrado rojo del 'Run' que se encuentra en la terminal.
      
    

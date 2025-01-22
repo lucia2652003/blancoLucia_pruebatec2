@@ -12,5 +12,7 @@ function filtracion() {
 function enviar() {
     if(document.getElementById("fecha").value == "" || document.getElementById("descripcion")){
         alert("Hay campos inválidos o que no se han rellenado, volviendo al listado");
+    }else{
+        alert("Formulario válido, volviendo al listado");
     }
 }
