@@ -179,19 +179,19 @@ y JSP (JavaServer Pages) para que el usuario pueda interactuar, recibir y solici
    * servlets: Unas clases que reciben peticiones HTTP para nosotros necesitamos GET (obtener resultados) y POST(coger parámetros)
       en las que generamos páginas dinámicas HTML. **Ojo no cambies las WebServlet**
 
- Luego otro directorio que es **/app/webapp** donde se almacena los JSP además empleamos lenguaje JSP y HTML. Se divide de esta manera:
+ Luego otro directorio que es **/app/webapp** donde se almacena los JSP. Se divide de esta manera:
   * partials: Archivos JSP que se van a reutilizar en los ficheros principales (fuera del directorio). 
-    Por ejemplo la cabecera o pié de página. Nos aparece en los principales como la sintaxis 
+    Por ejemplo la cabecera o pié de página. Nos aparece en los principales con la sintaxis 
     ````
       <%@ include file="partials/nnnn.jsp" %>
     ````
-  * public: Contiene directorios donde están almacenados imágenes (image), el diseño de HTML (css) y avise lo que le va a mostrar (js).
+  * public: Contiene directorios donde están almacenados imágenes (image), el diseño de HTML (css) y avise al usuario lo que va a ver (js).
   * index.jsp: Es el primer HTML que se nos muestra cuando iniciamos el programa.
-  * turno.jsp: Listado de los turnos de los diferentes ciudadanos y empleamos sintaxis JSP para que nos lo muestren
+  * turno.jsp: Listado de los turnos de los diferentes ciudadanos y empleamos sintaxis JSP para que nos lo muestren.
   * formTurno.jsp: Formulario para crear los turnos.
 
    No cambies los nombres de los JSP ni el documento, si no nos produce errores de que no existen.
-   Puedes verlos en Visual Studio Code y pero antes debes instalar la Extension JSP "EJS language support".
+   Puedes verlos en Visual Studio Code, pero antes debes instalar la Extension JSP "EJS language support".
 ## ¿Cómo ejecutar?
    Una vez conectado las conexiones a la base de datos y comprobado los parámetros debemos encender la aplicación,
    para eso debemos dirigirnos al pom.xml y lo ejecutamos poniendo en el panel derecho superior una lista desplegable y poner
